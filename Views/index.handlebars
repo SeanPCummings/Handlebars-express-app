@@ -1,0 +1,52 @@
+<!-- || JUMBOTRON || -->
+<div class="jumbotron text-center">
+  <h1 class="display-3">Eat-Da-Burger!</h1>
+  <hr class="my-4 hr-jumbotron">
+  <p>Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.</p>
+</div>
+
+<!-- || BODY CONTAINER || -->
+<div class="container" id="middleSection">
+
+  <div class="row">
+    <!-- Burger Wait List  -->
+    <div class="col-md-4 leftMiddle text-center">
+      <h2 class="bg-success">Burgers Customer's Would Like To Eat:</h2>
+      <h5 class="text-success">Waiting to be Devoured</h5>
+      <div class="uneaten">
+        {{#each burger}}
+          {{#unless devoured}}
+            {{> burgers/burgerBlock devoured=1}}
+          {{/unless}}
+        {{/each}}
+      </div>
+    </div>
+
+    <!-- Burger Input Form -->
+    <div class="col-md-4 centerMiddle text-center">
+      <h2 class="bg-secondary">What Burger Would You Like To Eat?</h2>
+      <h5>Order Here</h5>
+      <div class="burgerForm">
+        <form action="/api/burger" method="post">
+        <input type="text" name="burger_name" required>
+        <input type="hidden" name="devoured" value="0">
+        <!-- Submit Button ++Burger -->
+        <button type="submit" class="btn btn-outline-secondary"> + <i class="fas fa-hamburger"></i> </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Buger Devoured List -->
+    <div class="col-md-4 rightMiddle text-center">
+      <h2 class="bg-primary">Burgers Customer's Have Already Ate:</h2>
+      <h5 class="text-primary">Been Devoured</h5>
+      <div class="eaten">
+        {{#each burger}}
+          {{#if devoured}}
+            {{> burgers/burgerBlock devoured=0}}
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
