@@ -1,4 +1,4 @@
-USE burgers_db;
+USE v1ld9l1dqh1lkuy8;
 
 /* seed.sql for burgers_db from buger.js */
 INSERT INTO burgers (id, burger_name, devoured, date)
