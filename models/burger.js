@@ -26,7 +26,7 @@ const burger = {
 	// update burgers id "condition" (waiting/devoured)
 	findByIdAndUpdate: (id, obj, cb) => {
 		const condition = "id = " + id;
-		orm.updateByCondition("burgers", obj, condition, cb);
+		orm.updateOne("burgers", obj, condition, cb);
 	},
 };
 

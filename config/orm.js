@@ -13,7 +13,7 @@ function printQuestionMarks(num) {
 // ORM
 const orm = {
 	// burger.js selectAll →
-	all: (tableName, cb) => {
+	selectAll: (tableName, cb) => {
 		var queryString = `SELECT * FROM ??`;
 		// load table
 		connection.query(queryString, [tableName, cb], (err, res) => {
@@ -34,8 +34,7 @@ const orm = {
 		});
 	},
 
-	// © Ben
-	// burger.js updateOne →
+	
 	updateOne: (tableName, obj, condition, cb) => {
 		var queryString = `UPDATE ?? SET ? WHERE ${condition}`;
 		// update condition

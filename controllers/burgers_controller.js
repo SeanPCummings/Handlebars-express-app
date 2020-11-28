@@ -28,9 +28,7 @@ router.post("/api/burger", function (req, res) {
 	);
 });
 
-// © Ben
-// Get Route
-// ORM.js -> updateByCondition
+
 router.get("/api/burger/update", function (req, res) {
 	burger.findByIdAndUpdate(
 		req.query.id,

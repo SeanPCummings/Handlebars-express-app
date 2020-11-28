@@ -16,7 +16,7 @@
       <div class="uneaten">
         {{#each burger}}
           {{#unless devoured}}
-            {{> burgers/burgerBlock devoured=1}}
+            {{> burger/burgerContainer devoured=1}}
           {{/unless}}
         {{/each}}
       </div>
@@ -43,7 +43,7 @@
       <div class="eaten">
         {{#each burger}}
           {{#if devoured}}
-            {{> burgers/burgerBlock devoured=0}}
+            {{> burger/burgerContainer devoured=0}}
           {{/if}}
         {{/each}}
       </div>
